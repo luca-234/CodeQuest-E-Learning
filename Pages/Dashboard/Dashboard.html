@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CodeQuest — User Dashboard</title>
+    <style>
+   
+  </style>
+    <!-- Font Awesome (icons) -->
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoE6tftd3jR3aL4P2Cqayr5uH0h/ZpiBw3yTkg=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/src/styles/input.css">
+    <link rel="stylesheet" href="/src/styles/output.css">
+    <link rel="stylesheet" href="/src/styles/main.css">
+    <link rel="stylesheet" href="/src/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tiny5&display=swap"
+      rel="stylesheet">
+    <link rel="icon" type="image/png" href="/icons/CQ-bg.png">
+  </head>
+
+  <!-- Game Dashboard -->
+  <body
+    class="min-h-screen parchment bg-gradient-to-bbbg-purple-900 text-slate-100 antialiased">
+    <div class="mx-auto max-w-7xl p-6">
+      <!-- Top Bar -->
+      <section
+        class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <h1
+            class="text-3xl sm:text-4xl font-black grad-text tracking-tight">CodeQuest
+            Rune Weaver Dashboard</h1>
+          <p class="text-slate-300 mt-2">Track your journey across
+            realms, view achievements, and continue your next
+            quest.</p>
+        </div>
+        <nav class="flex gap-2">
+          <button id="exportBtn"
+            class="rounded-xl px-3 py-2 bg-slate-800 hover:bg-slate-700 ring-1 ring-slate-700">Export
+            Progress</button>
+          <button id="importBtn"
+            class="rounded-xl px-3 py-2 bg-slate-800 hover:bg-slate-700 ring-1 ring-slate-700">Import
+            Progress</button>
+          <input id="importFile" type="file" accept="application/json"
+            class="hidden" />
+        </nav>
+      </section>
+
+      <!-- Profile & Overview -->
+      <section class="mt-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- Profile card -->
+        <div class="soft-card rounded-3xl p-5 ring-1 ring-slate-700">
+          <div class="flex items-start gap-4">
+            <!-- Avatar -->
+            <div class="relative">
+              <svg viewBox="0 0 120 120"
+                class="w-24 h-24 rounded-2xl ring-1 ring-slate-700 glow">
+                <defs>
+                  <lineargradient id="g" x1="0" y1="0" x2="1"
+                    y2="1">
+                    <stop offset="0%"
+                      stop-color="#38bdf8" /><stop
+                      offset="100%"
+                      stop-color="#34d399" />
+                  </lineargradient>
+                </defs>
+                <rect x="0" y="0" width="120" height="120"
+                  rx="18" fill="#0b1220" />
+                <circle cx="60" cy="46" r="18" fill="url(#g)"
+                  opacity="0.9" />
+                <rect x="28" y="70" width="64" height="28"
+                  rx="14" fill="url(#g)" opacity="0.35" />
+                <text x="60" y="112" text-anchor="middle"
+                  fill="#94a3b8"
+                  font-size="10">Apprentice</text>
+              </svg>
+              <button id="editAvatar"
+                class="absolute -bottom-2 -right-2 rounded-lg px-2 py-1 text-xs bg-slate-800 hover:bg-slate-700 ring-1 ring-slate-700">Edit</button>
+            </div>
+            <div class="flex-1">
+              <h2 id="profileName" class="text-2xl font-bold"></h2>
+              <p id="profileTitle" class="text-emerald-300"></p>
+              <div
+                class="mt-3 grid grid-cols-3 gap-3 text-center">
+                <div
+                  class="rounded-xl bg-slate-900/60 ring-1 ring-slate-800 p-2">
+                  <div id="statLevel"
+                    class="text-xl font-bold">6</div>
+                  <div
+                    class="text-xs text-slate-300">Level</div>
+                </div>
+                <div
+                  class="rounded-xl bg-slate-900/60 ring-1 ring-slate-800 p-2">
+                  <div id="statXP"
+                    class="text-xl font-bold">1450</div>
+                  <div class="text-xs text-slate-300">XP</div>
+                </div>
+                <div
+                  class="rounded-xl bg-slate-900/60 ring-1 ring-slate-800 p-2">
+                  <div id="statBadges"
+                    class="text-xl font-bold">4</div>
+                  <div
+                    class="text-xs text-slate-300">Badges</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-4">
+            <label class="text-sm text-slate-300"
+              for="displayName">Display name</label>
+            <input id="displayName"
+              class="mt-1 w-full rounded-xl bg-slate-900/70 ring-1 ring-slate-700 px-3 py-2"
+              placeholder="Enter your name" />
+            <button id="saveProfile"
+              class="mt-2 rounded-xl px-3 py-2 bg-sky-500/90 hover:bg-sky-500 text-slate-900 font-semibold">Save
+              Profile</button>
+          </div>
+        </div>
+
+        <!-- Overall progress -->
+        <div
+          class="soft-card rounded-3xl p-5 ring-1 ring-slate-700 lg:col-span-2">
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg font-semibold">Journey Progress</h3>
+            <span id="overallPct"
+              class="text-sm text-slate-300">0%</span>
+          </div>
+          <div
+            class="mt-2 h-3 w-full bg-slate-800/60 rounded-full overflow-hidden ring-1 ring-slate-700">
+            <div id="overallBar"
+              class="h-full w-0 bg-gradient-to-r from-sky-400 via-indigo-400 to-emerald-400"></div>
+          </div>
+          <div
+            class="mt-4 grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-3">
+            <!-- Realm chips -->
+            <div
+              class="realm-chip rounded-2xl bg-slate-900/60 ring-1 ring-slate-800 p-3">
+              <div class="text-sm">HTML Hills</div>
+              <div class="text-xs text-slate-400"><span
+                  data-realm="HTML Hills"
+                  class="realm-progress">0/12</span></div>
+            </div>
+            <div
+              class="realm-chip rounded-2xl bg-slate-900/60 ring-1 ring-slate-800 p-3">
+              <div class="text-sm">CSS Caves</div>
+              <div class="text-xs text-slate-400"><span
+                  data-realm="CSS Caves"
+                  class="realm-progress">0/12</span></div>
+            </div>
+            <div
+              class="realm-chip rounded-2xl bg-slate-900/60 ring-1 ring-slate-800 p-3">
+              <div class="text-sm">Flexbox Forest</div>
+              <div class="text-xs text-slate-400"><span
+                  data-realm="Flexbox Forest"
+                  class="realm-progress">0/8</span></div>
+            </div>
+            <div
+              class="realm-chip rounded-2xl bg-slate-900/60 ring-1 ring-slate-800 p-3">
+              <div class="text-sm">Grid Gardens</div>
+              <div class="text-xs text-slate-400"><span
+                  data-realm="Grid Gardens"
+                  class="realm-progress">0/8</span></div>
+            </div>
+            <div
+              class="realm-chip rounded-2xl bg-slate-900/60 ring-1 ring-slate-800 p-3">
+              <div class="text-sm">Media Mountains</div>
+              <div class="text-xs text-slate-400"><span
+                  data-realm="Media Mountains"
+                  class="realm-progress">0/6</span></div>
+            </div>
+            <div
+              class="realm-chip rounded-2xl bg-slate-900/60 ring-1 ring-slate-800 p-3">
+              <div class="text-sm">Responsive River</div>
+              <div class="text-xs text-slate-400"><span
+                  data-realm="Responsive River"
+                  class="realm-progress">0/6</span></div>
+            </div>
+          </div>
+          <div class="mt-4 flex items-center justify-between gap-3">
+            <div id="currentObjective"
+              class="text-sm text-slate-300">Current Objective:
+              —</div>
+            <div class="flex gap-2">
+              <button id="continueBtn"
+                class="rounded-xl px-4 py-2 bg-emerald-500/90 hover:bg-emerald-500 text-slate-900 font-semibold">Continue
+                Quest</button>
+              <button id="manageBtn"
+                class="rounded-xl px-4 py-2 bg-slate-800 hover:bg-slate-700 ring-1 ring-slate-600">Manage
+                Progress</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Achievements & Recent Activity -->
+      <section class="mt-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div
+          class="soft-card rounded-3xl p-5 ring-1 ring-slate-700 lg:col-span-2">
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg font-semibold">Achievements</h3>
+            <button id="viewAllBadges"
+              class="text-sm text-sky-300 hover:underline">View
+              all</button>
+          </div>
+          <div id="badgesGrid"
+            class="mt-3 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 xl:grid-cols-8 gap-3"></div>
+        </div>
+        <div class="soft-card rounded-3xl p-5 ring-1 ring-slate-700">
+          <h3 class="text-lg font-semibold">Recent Activity</h3>
+          <ul id="activityList"
+            class="mt-3 space-y-2 text-sm max-h-64 overflow-auto pr-2 scrollbar"></ul>
+        </div>
+      </section>
+
+      <!-- Realms & Quests -->
+      <section
+        class="mt-6 soft-card rounded-3xl p-5 ring-1 ring-slate-700">
+        <div class="flex items-center justify-between">
+          <h3 class="text-lg font-semibold">Realms</h3>
+          <div class="flex gap-2">
+            <select id="realmSelect"
+              class="rounded-xl bg-slate-900/70 ring-1 ring-slate-700 px-3 py-2 text-sm"></select>
+            <button id="openRealm"
+              class="rounded-xl px-3 py-2 bg-sky-500/90 hover:bg-sky-500 text-slate-900 font-semibold">Open
+              Realm</button>
+          </div>
+        </div>
+        <div id="realmQuests"
+          class="mt-4 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4"></div>
+      </section>
+
+      <!-- Manage Progress Modal -->
+      <div id="progressModal" class="fixed inset-0 z-50 hidden">
+        <div
+          class="absolute inset-0 bg-slate-900/70 backdrop-blur-sm"></div>
+        <div
+          class="relative mx-auto mt-10 w-[min(95vw,900px)] rounded-3xl soft-card ring-1 ring-slate-700">
+          <div
+            class="p-5 border-b border-slate-700/70 flex items-center justify-between">
+            <h3 class="text-xl font-bold">Manage Progress</h3>
+            <button data-close
+              class="rounded-lg px-3 py-1.5 bg-slate-800/80 hover:bg-slate-800 ring-1 ring-slate-700">✕</button>
+          </div>
+          <div class="p-5 grid gap-4">
+            <div class="flex items-center gap-3">
+              <select id="manageRealm"
+                class="rounded-xl bg-slate-900/70 ring-1 ring-slate-700 px-3 py-2 text-sm"></select>
+              <button id="checkAll"
+                class="rounded-xl px-3 py-2 bg-slate-800 hover:bg-slate-700 ring-1 ring-slate-700">Check
+                all</button>
+              <button id="uncheckAll"
+                class="rounded-xl px-3 py-2 bg-slate-800 hover:bg-slate-700 ring-1 ring-slate-700">Uncheck
+                all</button>
+            </div>
+            <div id="manageList"
+              class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3"></div>
+            <div class="flex items-center justify-end gap-2">
+              <button data-close
+                class="rounded-xl px-4 py-2 bg-slate-800 hover:bg-slate-700 ring-1 ring-slate-600">Close</button>
+              <button id="saveProgressChanges"
+                class="rounded-xl px-4 py-2 bg-emerald-500/90 hover:bg-emerald-500 text-slate-900 font-semibold">Save
+                changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="mt-10 text-center text-xs text-slate-400">
+      </footer>
+    </div>
+
+  </body>
+</html>

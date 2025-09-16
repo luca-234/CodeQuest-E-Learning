@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CodeQuest</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="/src/styles/input.css">
+        <link rel="stylesheet" href="/src/styles/output.css">
+        <link rel="stylesheet" href="/src/styles/main.css">
+        <link rel="stylesheet" href="/src/styles/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Tiny5&display=swap"
+            rel="stylesheet">
+        <link rel="icon" type="image/png" href="/icons/CQ-bg.png">
+        <style>
+               
+            </style>
+    </head>
+    <body
+        class="bg-gradient-to-b from-purple-900 via-indigo-900 to-yellow-500 text-white">
+
+        <!-- Navbar -->
+        <header id="header"
+            class="header flex justify-between items-center px-6 py-4 bg-purple-950/80 shadow-lg fixed top-0 w-full z-50">
+            <h1 class="text-2xl font-bold text-yellow-400">CodeQuest</h1>
+            <nav class="hidden md:flex gap-6 text-lg">
+                <a href="#"
+                    class="hover:text-yellow-300">Home</a>
+                <a href="/Pages/About-page/about.html   "
+                    class="hover:text-yellow-300">About</a>
+                <a href="/Pages/Games-preview/preview.html"
+                    class="hover:text-yellow-300">Games</a>
+                <a href="/Pages/Dashboard/Dashboard.html"
+                    class="hover:text-yellow-300">Profile</a>
+            </nav>
+            <button
+                class="bg-yellow-400 text-purple-900 font-semibold px-4 py-2 rounded-xl shadow-md hover:bg-yellow-300">
+                Start Quest
+            </button>
+        </header>
+
+        <!-- Hero Section -->
+        <section
+            class="relative bg-[url('/images/pixel.jpg')] bg-cover bg-center text-white overflow-hidden">
+            <div
+                class="max-w-7xl mx-auto px-6 py-20 flex flex-col lg:flex-row items-center gap-10">
+
+                <!-- Left: Text Content -->
+                <div class="flex-1 text-center lg:text-left">
+                    <h1
+                        class="shadow-black text-4xl sm:text-5xl font-extrabold leading-tight">
+                        Embark on Your <span class="text-yellow-400">Epic Coding
+                            Quest</span> 🗡️
+                    </h1>
+                    <p class="mt-6 text-lg text-gray-300 max-w-xl">
+                        Learn HTML & CSS through an immersive journey of <span
+                            class="text-yellow-300">quests</span>,
+                        <span class="text-yellow-300">interactive
+                            challenges</span>, and
+                        <span class="text-yellow-300">story-driven
+                            adventures</span>.
+                        Claim your first badge and begin your legend today.
+                    </p>
+                    <div
+                        class="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#start"
+                            class="px-6 py-3 bg-yellow-400 text-black font-bold rounded-lg shadow-lg hover:bg-yellow-300 transition transform hover:scale-105">
+                            🎯 Start Your First Quest
+                        </a>
+                        <a href="#realms"
+                            class="px-6 py-3 border border-yellow-400 text-yellow-400 font-semibold rounded-lg hover:bg-yellow-400 hover:text-black transition">
+                            🗺️ Explore the Realms
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: Visual / Illustration -->
+                <div class="flex-1 relative">
+                    <div
+                        class=" ">
+                        <img src="/images/character_illustration.jpg"
+                            alt="CodeQuest Hero"
+                            class="rounded-full w-72 h-72 mx-auto lg:mx-0 shadow flex items-center justify-center">
+                    </div>
+                    <!-- <div
+                        class="absolute bottom-6 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-60 px-4 py-2 rounded-lg text-sm text-yellow-300 font-semibold">
+                        🏆 Unlock your first badge in under 10 minutes!
+                    </div> -->
+                </div>
+
+            </div>
+        </section>
+        <!-- <section
+            class="bg-[url(pixel.jpg)] bg-cover bg-center h-screen flex flex-col justify-center items-center text-center px-6">
+            <h2 class="text-5xl md:text-6xl font-extrabold mb-6">Embark on Your
+                <span class="text-yellow-400">Coding Quest</span></h2>
+            <p class="text-lg md:text-xl max-w-2xl mb-8">
+                Learn <span class="text-yellow-300">HTML</span> & <span
+                    class="text-yellow-300">CSS</span> through an epic journey
+                of challenges, quests, and interactive storytelling.
+            </p>
+            <button
+                class="bg-yellow-400 text-purple-900 font-bold px-6 py-3 rounded-2xl shadow-lg hover:bg-yellow-300">
+                Begin Your Adventure
+            </button>
+        </section> -->
+
+        <!-- Levels Preview -->
+        <section id class="py-20 px-6 bg-[url('/images/realms.png')] bg-cover">
+            <h3 class="text-4xl font-bold text-center mb-12">Explore the
+                Realms</h3>
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div
+                    class="bg-purple-800/70 p-6 rounded-2xl shadow-xl hover:scale-105 transition">
+                    <h4 class="text-2xl font-semibold text-yellow-300 mb-4">HTML
+                        Hills</h4>
+                    <p class="text-gray-300">Master the basics of HTML while
+                        exploring the magical hills of tags and elements.</p>
+                </div>
+                <div
+                    class="bg-purple-800/70 p-6 rounded-2xl shadow-xl hover:scale-105 transition">
+                    <h4 class="text-2xl font-semibold text-yellow-300 mb-4">CSS
+                        Caves</h4>
+                    <p class="text-gray-300">Learn how to style your pages as
+                        you journey through the dark caves of CSS rules.</p>
+                </div>
+                <div
+                    class="bg-purple-800/70 p-6 rounded-2xl shadow-xl hover:scale-105 transition">
+                    <h4
+                        class="text-2xl font-semibold text-yellow-300 mb-4">Flexbox
+                        Forest</h4>
+                    <p class="text-gray-300">Tame layouts and responsiveness in
+                        the enchanted forest of Flexbox and Grid.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id
+            class="py-20 px-6 bg-[url(realms.jpg)] bg-cover bg-center">
+            <h2
+                class="text-5xl md:text-6xl font-extrabold text-center mb-6">Traditional
+                Learning
+                <span class="text-yellow-400">problems</span></h2>
+            <p
+                class=" text-2xl md:text-xl text-indigo-700  mx-12">
+                According to neuroscience research, the essential thing in
+                learning is practice. The more we practice, the more effectively
+                our brain store learned information for later access. However,
+                traditional learning is the opposite of practice.
+                How many times have you opened a code editor and started coding
+                after watching another coding tutorial? Probably not enough. But
+                the problem is not with you. It's the way you learn.
+
+                Coding videos are designed to be consumed like TV shows. As a
+                result, all the hours spent "learning" turn into hours spent
+                "watching theory." And just theory without practice leads to
+                unproductive learning. Especially in learning to code.
+            </p>
+            <h3 class="text-4xl font-bold text-center mb-12">Why Choose
+                CodeQuest?</h3>
+            <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+                <div class="text-center">
+                    <div class="text-5xl mb-4">⚔️</div>
+                    <h4 class="text-xl font-semibold mb-2">Story-Driven
+                        Learning</h4>
+                    <p class="text-black">Advance through quests and
+                        challenges that make learning exciting.</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl mb-4">💻</div>
+                    <h4 class="text-xl font-semibold mb-2">Interactive
+                        Editor</h4>
+                    <p class="text-black">See real-time previews of your code
+                        while solving tasks.</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl mb-4">🏆</div>
+                    <h4 class="text-xl font-semibold mb-2">Rewards &
+                        Achievements</h4>
+                    <p class="text-black">Earn XP, badges, and unlock new
+                        levels as you progress.</p>
+                </div>
+            </div>
+        </section>
+
+        <script src="./Navbar/Navbar.js"></script>
+    </body>
+</html>

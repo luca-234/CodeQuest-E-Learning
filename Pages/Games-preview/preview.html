@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Games</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="/src/styles/input.css">
+        <link rel="stylesheet" href="/src/styles/output.css">
+        <link rel="stylesheet" href="/src/styles/main.css">
+        <link rel="stylesheet" href="/src/styles/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Tiny5&display=swap"
+            rel="stylesheet">
+        <link rel="icon" type="image/png" href="/icons/CQ-bg.png">
+    </head>
+    <body
+        class="bg-gradient-to-b from-purple-900 via-indigo-900 to-yellow-500  text-white">
+        <!-- Navbar -->
+        <header id="header"
+            class="header flex justify-between items-center px-6 py-4 bg-purple-950/80 shadow-lg fixed top-0 w-full z-50"></header>
+        <!-- hero section -->
+        <section id="hero"
+            class="hero relative bg-[url('/images/pixel.jpg')] bg-cover bg-center text-white overflow-hidden">
+            <div
+                class="max-w-7xl mx-auto px-6 py-20 flex flex-col lg:flex-row items-center gap-10">
+
+                <!-- Left: Text Content -->
+                <div class="flex-1 text-center lg:text-left">
+                    <h1
+                        class="text-4xl sm:text-5xl font-extrabold leading-tight">
+                        Embark on Your <span class="text-yellow-400">Epic Coding
+                            Quest</span> 🗡️
+                    </h1>
+                    <p class="mt-6 text-lg text-gray-300 max-w-xl">
+                        Learn HTML & CSS through an immersive journey of <span
+                            class="text-yellow-300">quests</span>,
+                        <span class="text-yellow-300">interactive
+                            challenges</span>, and
+                        <span class="text-yellow-300">story-driven
+                            adventures</span>.
+                        Claim your first badge and begin your legend today.
+                    </p>
+                    <div
+                        class="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#start"
+                            class="px-6 py-3 bg-yellow-400 text-black font-bold rounded-lg shadow-lg hover:bg-yellow-300 transition transform hover:scale-105">
+                            🎯 Start Your First Quest
+                        </a>
+                        <a href="#realms"
+                            class="px-6 py-3 border border-yellow-400 text-yellow-400 font-semibold rounded-lg hover:bg-yellow-400 hover:text-black transition">
+                            🗺️ Explore the Realms
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: Visual / Illustration -->
+                <div class="flex-1 relative">
+                    <div
+                        class=" ">
+                        <img src="/images/character_illustration.jpg"
+                            alt="CodeQuest Hero"
+                            class="rounded-full w-72 h-72 mx-auto lg:mx-0 shadow flex items-center justify-center">
+                    </div>
+
+                </div>
+            </section>
+            <!-- Quests map -->
+            <section id="map" class="map my-20 mx-20">
+                <div class="max-w-7xl mx-auto px-6">
+                    <h2 class="text-3xl font-bold mb-8 text-center">Quest
+                        Map</h2>
+                    <div class="bg-black relative w-full h-96">
+                        <div
+                            class="w-full h-full object-cover rounded-lg shadow-lg">
+
+                        </div>
+
+                    </div>
+                </section>
+                <!-- progress -->
+                <section>
+                    <div class="w-50 mx-20">
+                        <span
+                            class="text-2xl">80%
+                            complete</span>
+                        <div class="bg-gray-700 rounded-full h-3">
+                            <div class="bg-green-500 h-3 rounded-full"
+                                style="width: 80%;"></div>
+                        </div>
+                    </div>
+
+                </section>
+                <!-- Quest -->
+                <section id="quest" class="quest my-20 mx-20">
+                    <div class="max-w-7xl mx-auto px-6">
+                        <h2
+                            class="text-3xl font-bold mb-8 text-center">Available
+                            Quests</h2>
+                        <div
+                            class="grid grid-rows-1 gap-8">
+                            <!-- HTML Hills -->
+                            <div
+                                class="relative bg-purple-950/80 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+
+                                <h3 class="text-xl font-semibold mb-4">HTML
+                                    Hills</h3>
+                                <p class="mb-4">The Foundations of Creation.
+                                    <br>
+                                    Where
+                                    apprentices carve their first runes and
+                                    learn
+                                    the
+                                    sacred shapes of structure.</p>
+                                <a href="/Pages/Games/hills.html"
+                                    class="inline-block bg-yellow-400 text-purple-900 font-semibold px-4 py-2 rounded-lg hover:bg-yellow-300 transition-colors duration-300">Start
+                                    Quest</a>
+                                <!-- image Left -->
+                                <div class=" size-7">
+                                    <img src="/images/bright.jpg" alt
+                                        class="absolute inset-y-0 right-0 w- h-full object-cover rounded-r-lg opacity-70">
+                                </div>
+                            </div>
+                            <!-- CSS Caves  -->
+                            <div
+                                class="relative bg-purple-950/80 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+
+                                <h3 class="text-xl font-semibold mb-4">CSS Caves
+                                </h3>
+                                <p class="mb-4">The Illusions of Light and
+                                    Shadow.
+                                    <br>
+                                    Deep
+                                    within glowing caverns, Weavers master the
+                                    art
+                                    of
+                                    color, beauty, and design.</p>
+                                <a href="/Pages/Games/css-caves.html"
+                                    class="inline-block bg-yellow-400 text-purple-900 font-semibold px-4 py-2 rounded-lg hover:bg-yellow-300 transition-colors duration-300">Start
+                                    Quest</a>
+                                <!-- image Left -->
+                                <div class=" size-7">
+                                    <img src="/images/css-cave.jpg" alt
+                                        class="absolute inset-y-0 right-0 w- h-full object-cover rounded-r-lg opacity-70">
+                                </div>
+                                <!--  -->
+                            </div>
+                            <!-- Flexbox Forest  -->
+                            <div
+                                class="relative bg-purple-950/80 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+
+                                <h3 class="text-xl font-semibold mb-4">Flexbox
+                                    Forest</h3>
+                                <p class="mb-4">The Dance of Alignment. <br> A
+                                    living
+                                    woodland where branches shift and flow,
+                                    teaching
+                                    the
+                                    rhythm of order and balance.</p>
+                                <a href="/cavern.html"
+                                    class="inline-block bg-yellow-400 text-purple-900 font-semibold px-4 py-2 rounded-lg hover:bg-yellow-300 transition-colors duration-300">Start
+                                    Quest</a>
+                                <!-- image Left -->
+                                <div class=" size-7">
+                                    <img src="/images/bright.jpg" alt
+                                        class="absolute inset-y-0 right-0 w- h-full object-cover rounded-r-lg opacity-70">
+                                </div>
+                                <!-- coming soon banner
+                                <div
+                                    class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center rounded-lg">
+                                    <h1 class="text-5xl">COMMING SOON</h1>
+                                </div> -->
+                            </div>
+                            <!-- Grid Gardens  -->
+                            <div
+                                class="relative bg-purple-950/80 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+
+                                <h3 class="text-xl font-semibold mb-4">Grid
+                                    Gardens
+                                </h3>
+                                <p class="mb-4">The Geometry of Harmony.
+                                    <br>Sacred
+                                    gardens where rows and columns bloom into
+                                    perfect
+                                    patterns of power.</p>
+                                <a href="#"
+                                    class="inline-block bg-yellow-400 text-purple-900 font-semibold px-4 py-2 rounded-lg hover:bg-yellow-300 transition-colors duration-300">Start
+                                    Quest</a>
+                                <!-- image Left -->
+                                <div class=" size-7">
+                                    <img src="/images/bright.jpg" alt
+                                        class="absolute inset-y-0 right-0 w- h-full object-cover rounded-r-lg opacity-70">
+                                </div>
+                                <!-- coming soon banner -->
+                                <div
+                                    class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center rounded-lg">
+                                    <h1 class="text-5xl">COMMING SOON</h1>
+                                </div>
+                            </div>
+                            <!-- Media Mountains  -->
+                            <div
+                                class="relative bg-purple-950/80 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+
+                                <h3 class="text-xl font-semibold mb-4">Media
+                                    Mountains
+                                </h3>
+                                <p class="mb-4">The Voices of the World.
+                                    <br>High
+                                    peaks
+                                    echo with images, sound, and motion, where
+                                    Weavers
+                                    command media runes.</p>
+                                <a href="#"
+                                    class="inline-block bg-yellow-400 text-purple-900 font-semibold px-4 py-2 rounded-lg hover:bg-yellow-300 transition-colors duration-300">Start
+                                    Quest</a>
+                                <!-- image Left -->
+                                <div class=" size-7">
+                                    <img src="/images/bright.jpg" alt
+                                        class="absolute inset-y-0 right-0 w- h-full object-cover rounded-r-lg opacity-70">
+                                </div>
+                                <!-- coming soon banner -->
+                                <div
+                                    class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center rounded-lg">
+                                    <h1 class="text-5xl">COMMING SOON</h1>
+                                </div>
+                            </div>
+                            <!-- Responsive River  -->
+                            <div
+                                class="relative bg-purple-950/80 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+
+                                <h3
+                                    class="text-xl font-semibold mb-4">Responsive
+                                    River</h3>
+                                <p class="mb-4">The Flow of Adaptation. <br>A
+                                    mystical
+                                    river that bends and reshapes the world,
+                                    revealing
+                                    the magic of flexibility.</p>
+                                <a href="#"
+                                    class="inline-block bg-yellow-400 text-purple-900 font-semibold px-4 py-2 rounded-lg hover:bg-yellow-300 transition-colors duration-300">Start
+                                    Quest</a>
+                                <!-- image Left -->
+                                <div class=" size-7">
+                                    <img src="/images/bright.jpg" alt
+                                        class="absolute inset-y-0 right-0 w- h-full object-cover rounded-r-lg opacity-70">
+                                </div>
+                                <!-- coming soon banner -->
+                                <div
+                                    class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center rounded-lg">
+                                    <h1 class="text-5xl">COMMING SOON</h1>
+                                </div>
+                            </div>
+                        </section>
+
+                        <script src="/scripts/Sections/hero.js"></script>
+                        <script src="/scripts/Sections/Navbar.js"></script>
+                    </body>
+                </html>
