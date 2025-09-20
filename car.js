@@ -43,7 +43,9 @@ const QUESTS = [
       },
     ],
     template: `<!DOCTYPE html><html><head><style>
-#cave { display:flex; /* add more */ }
+#cave { display:flex; 
+/* add more */
+ }
 .scroll { border: 2px solid #333; padding: 10px; margin: 5px; }
 </style></head><body>
 <div id="cave">
@@ -67,7 +69,9 @@ const QUESTS = [
       { speaker: "You", line: "I will weave align-items to balance them." },
     ],
     template: `<!DOCTYPE html><html><head><style>
-#cave { display:flex; height:200px; border:1px solid #666; /* add more */ }
+#cave { display:flex; height:200px; border:1px solid #666;
+/* add more */
+ }
 .scroll { border: 2px solid #333; padding: 10px; margin: 5px; }
 </style></head><body>
 <div id="cave">
@@ -91,7 +95,9 @@ const QUESTS = [
       { speaker: "You", line: "I will use space-between to separate them." },
     ],
     template: `<!DOCTYPE html><html><head><style>
-#cave { display:flex; /* add more */ }
+#cave { display:flex;
+ /* add more */
+  }
 .scroll { border: 2px solid #333; padding: 10px; margin: 5px; }
 </style></head><body>
 <div id="cave">
@@ -115,7 +121,9 @@ const QUESTS = [
       { speaker: "You", line: "I will rotate the flow with flex-direction." },
     ],
     template: `<!DOCTYPE html><html><head><style>
-#cave { display:flex; /* add more */ }
+#cave { display:flex; 
+/* add more */
+ }
 .scroll { border: 2px solid #333; padding: 10px; margin: 5px; }
 </style></head><body>
 <div id="cave">
