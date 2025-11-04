@@ -70,9 +70,9 @@ Or simply open the index.html file in your browser for the basic version.
 
 [x] Build core HTML & CSS quests
 
-[x] Add gamified elements (badges, progress system)
+[ ] Add gamified elements (badges, progress system)
 
-[ ] Create interactive story-based learning flow
+[x] Create interactive story-based learning flow
 
 [ ] Expand to JavaScript quests
 

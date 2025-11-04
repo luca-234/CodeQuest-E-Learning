@@ -23,23 +23,89 @@
 
         <!-- Navbar -->
         <header id="header"
-            class="header flex justify-between items-center px-6 py-4 bg-purple-950/80 shadow-lg fixed top-0 w-full z-50">
-            <h1 class="text-2xl font-bold text-yellow-400">CodeQuest</h1>
-            <nav class="hidden md:flex gap-6 text-lg">
-                <a href="index.html"
-                    class="hover:text-yellow-300">Home</a>
-                <a href="/Pages/About-page/about.html   "
-                    class="hover:text-yellow-300">About</a>
-                <a href="/Pages/Games-preview/preview.html"
-                    class="hover:text-yellow-300">Games</a>
-                <a href="/Pages/Dashboard/Dashboard.html"
-                    class="hover:text-yellow-300">Profile</a>
-            </nav>
-            <button
-                class="bg-yellow-400 text-purple-900 font-semibold px-4 py-2 rounded-xl shadow-md hover:bg-yellow-300">
-                Start Quest
-            </button>
+            class="fixed top-0 w-full z-50 bg-purple-950/80 backdrop-blur-sm shadow-lg">
+            <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+                <h1 class="text-2xl font-bold text-yellow-400">CodeQuest</h1>
+
+                <!-- Desktop nav -->
+                <nav class="hidden md:flex gap-6 text-lg" role="navigation" aria-label="Main">
+                    <a href="index.html" class="hover:text-yellow-300">Home</a>
+                    <a href="/Pages/About-page/about.html" class="hover:text-yellow-300">About</a>
+                    <a href="/Pages/Games-preview/preview.html" class="hover:text-yellow-300">Games</a>
+                    <a href="/Pages/Dashboard/Dashboard.html" class="hover:text-yellow-300">Profile</a>
+                </nav>
+
+                <!-- Desktop Start button -->
+                <div class="hidden md:block"></div>
+                    <a href="#"
+                       class="bg-yellow-400 text-purple-900 font-semibold px-4 py-2 rounded-xl shadow-md hover:bg-yellow-300">
+                        Start Quest
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <button id="nav-toggle" aria-expanded="false" aria-controls="mobile-menu"
+                    class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-yellow-400 hover:bg-purple-900/30 focus:outline-none">
+                    <span class="sr-only">Open main menu</span>
+                    <!-- hamburger -->
+                    <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                    <!-- close -->
+                    <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile menu (hidden by default) -->
+            <div id="mobile-menu" class="hidden md:hidden absolute top-full inset-x-0 bg-purple-950/95 backdrop-blur-sm shadow-md">
+                <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-4 items-center">
+                    <nav class="flex flex-col gap-3 w-full text-center" role="navigation" aria-label="Mobile">
+                        <a href="index.html" class="block py-2 hover:text-yellow-300">Home</a>
+                        <a href="/Pages/About-page/about.html" class="block py-2 hover:text-yellow-300">About</a>
+                        <a href="/Pages/Games-preview/preview.html" class="block py-2 hover:text-yellow-300">Games</a>
+                        <a href="/Pages/Dashboard/Dashboard.html" class="block py-2 hover:text-yellow-300">Profile</a>
+                    </nav>
+                    <a href="#"
+                       class="mt-2 w-full text-center bg-yellow-400 text-purple-900 font-semibold px-4 py-2 rounded-xl shadow-md hover:bg-yellow-300">
+                        Start Quest
+                    </a>
+                </div>
+            </div>
         </header>
+
+        <script>
+            // Mobile nav toggle
+            (function () {
+                const btn = document.getElementById('nav-toggle');
+                const menu = document.getElementById('mobile-menu');
+                const iconOpen = document.getElementById('icon-open');
+                const iconClose = document.getElementById('icon-close');
+
+                btn.addEventListener('click', () => {
+                    const expanded = btn.getAttribute('aria-expanded') === 'true';
+                    btn.setAttribute('aria-expanded', String(!expanded));
+                    menu.classList.toggle('hidden');
+                    iconOpen.classList.toggle('hidden');
+                    iconClose.classList.toggle('hidden');
+                });
+
+                // Close mobile menu on resize to md and above
+                window.addEventListener('resize', () => {
+                    if (window.innerWidth >= 768) {
+                        menu.classList.add('hidden');
+                        btn.setAttribute('aria-expanded', 'false');
+                        iconOpen.classList.remove('hidden');
+                        iconClose.classList.add('hidden');
+                    }
+                });
+            })();
+        </script>
 
         <!-- Hero Section -->
         <section
